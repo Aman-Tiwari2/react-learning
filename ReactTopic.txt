@@ -1,0 +1,24 @@
+JSX ---> JavaScripts XML 
+
+It is a combination of JavaScripts and HTML. Here we are going to use react js which uses the concept of Virtual DOM
+
+
+Small Commands to get snippit fast 
+
+---> rafce
+
+
+
+Hooks --> They are special types of functions we are using in reactJS
+
+
+useState --> It allows us to change value and of any data 
+
+userContext --> It help to decentralized the data foe all the components 
+
+useEffect --> It help to run some task side by side form main for the better accuracy and result at the same time.
+
+
+spread operator ---> [...name] it used in array for storing data
+
+rest operrator ---> it used in functions (...name)
