@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { nanoid } from 'nanoid'
 const App = () => {
 
 
@@ -15,14 +15,36 @@ const App = () => {
   const [title, settitle] = useState("")
   const [checked, setchecked] = useState(false)
 
+  const SubmitHandler = (e)=>{
+    e.preventDefault()
+    const newtodos = {
+      id: nanoid(),
+      title:title,
+      iscompleted:checked
+    }
 
+
+    
+
+
+    let copytodo = [...todos];
+    copytodos.push(newtodos)
+    settodos(copytodos)
+
+    // sort form to write above code to copytodos
+
+    settodos([...todos, newtodos])
+
+  }
+
+  console.log(todos)
 
 
   return (
     <>
     <div>
       <h1>Create Tasks</h1>
-      <form>
+      <form onSubmit={SubmitHandler}>
         <input 
           onChange={(e)=> {settitle(e.target.value)}}
           type='text'
@@ -30,7 +52,7 @@ const App = () => {
           value={title}
         />
         <input 
-          onChange={(e) => {e.target.checked}}
+          onChange={(e) => {setchecked(e.target.checked)}}
           checked={checked}
           type="checkbox" 
         />
